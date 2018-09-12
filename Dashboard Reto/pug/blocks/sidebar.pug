@@ -1,0 +1,35 @@
+.container-sidebar#Sidebar-content
+    .container-sidebar__top
+        span(onclick="toggleMenu()").icon-close
+
+    .container-sidebar__content
+        .container-sidebar__content__headersidebar
+            include ../blocks/title_generalContent.pug
+
+        .container-sidebar__content__data
+            h3.container-sidebar__content__title FILTER BY BOARD
+
+            ul.sidebar-menu__board
+                - var arr=['Planner Board', 'Summary Board', 'Project Board', 'Internal Board'];
+                - for (var i=0; i<arr.length; i++)
+
+                    li.sidebar-menu__board__item
+                        a.sidebar-menu__board__link
+                            div(class='square' + i)
+                                span.icon-check
+
+                            h4= arr[i]
+
+        .container-sidebar__content__data
+            h3.container-sidebar__content__title FILTER BY MEMBER
+            ul.sidebar-menu__members
+                - var arr2=['Anna Klawikowska', 'Sierglej Soskowiec'];
+                - for (var a=0; a<arr2.length; a++)
+
+                    li.sidebar-menu__members__item
+                        a.sidebar-menu__members__link
+                            div(class='square' + a)
+                                span S
+                                img(src="images/persona.jpg")
+
+                            h4= arr2[a]

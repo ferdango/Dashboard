@@ -1,0 +1,69 @@
+extends ../template/template.pug
+
+append config
+    -currentPage_classbody ="indexDashboard_classbody"
+    -title_page = "Boards"
+
+block header
+    include ../blocks/header.pug
+
+block sidebar
+    include ../blocks/sidebar.pug
+
+block main
+    .container-main
+        include ../blocks/headerContent-body.pug
+
+        section.content-charts
+            article.chart
+                h3.chart__title TASKS COMPLETED
+
+                .chart__content
+                    .image-wrapper
+                        img(src="images/graphics.png")
+
+            article.chart.middle-chart
+                h3.chart__title TASKS COMPLETED
+
+                .chart__content
+
+                    canvas#myChart(style="width:100%; height:100%;")
+
+
+            article.chart.chart-summary
+                h3.chart__title SUMMARY
+
+                .chart__content
+                    div.square.border-red
+                        h1.chart__content__number 24
+                        h4.chart__content__desc Active Users
+                        .progressive-bar.border-red
+                    div.square
+                        h1.chart__content__number 36
+                        h4.chart__content__desc Overdue
+                        .progressive-bar.border-red
+                    div.square
+                        img(src="images/linear.png")
+
+                    div.square.border-red
+                        h1.chart__content__number 68
+                        h4.chart__content__desc Open boards
+                        .progressive-bar.border-red
+
+        section.content-charts.second-containerchart
+            article.chart.chart-medium
+                h3.chart__title TASKS COMPLETED
+
+                .chart__content
+
+                    canvas#myChart1(style="width:100%; height:100%;")
+
+
+            article.chart.chart-medium
+                h3.chart__title TASKS COMPLETED
+
+                .chart__content
+
+                    canvas#myChart2(style="width:100%; height:100%;")
+
+

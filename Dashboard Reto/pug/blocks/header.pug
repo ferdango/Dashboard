@@ -1,0 +1,23 @@
+header.container-header
+    section.container-header__sectionTitle
+        .title-wrapper
+            span.icon-title
+            h3.title #{title_page}
+
+        .searchin-wrapper
+            span.icon-search
+            input(type="text" placeholder="Search...").search-input
+
+    section.container-header__sectionUser
+        .user-detail
+            .user-detail__image
+                img(src="images/persona.jpg")
+
+            .user-detail__name
+                h4 Hello, Ana!
+            span.icon-notification.user-detail__notification
+
+
+        span(onclick="toggleMenu()").icon-menu
+
+

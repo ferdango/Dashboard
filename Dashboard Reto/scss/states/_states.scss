@@ -1,0 +1,7 @@
+@mixin transform($property) {
+  transform: $property;
+}
+
+.showing_sidebar{
+  @include transform(translateX(0px));
+}

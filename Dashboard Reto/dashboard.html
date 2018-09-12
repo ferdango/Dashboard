@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+  </head>
+  <body class="indexDashboard_classbody">
+    <header class="container-header">
+      <section class="container-header__sectionTitle">
+        <div class="title-wrapper"><span class="icon-title"></span>
+          <h3 class="title">Boards</h3>
+        </div>
+        <div class="searchin-wrapper"><span class="icon-search"></span>
+          <input class="search-input" type="text" placeholder="Search..."/>
+        </div>
+      </section>
+      <section class="container-header__sectionUser">
+        <div class="user-detail">
+          <div class="user-detail__image"><img src="images/persona.jpg"/></div>
+          <div class="user-detail__name">
+            <h4>Hello, Ana!</h4>
+          </div><span class="icon-notification user-detail__notification"></span>
+        </div><span class="icon-menu" onclick="toggleMenu()"></span>
+      </section>
+    </header>
+    <div class="container-sidebar" id="Sidebar-content">
+      <div class="container-sidebar__top"><span class="icon-close" onclick="toggleMenu()"></span></div>
+      <div class="container-sidebar__content">
+        <div class="container-sidebar__content__headersidebar">
+          <div class="general-title-content__title-wrapper">
+            <div class="greatwrapper"><span class="icon-star2"></span></div>
+            <div class="general-title-content__title-wrapper__detail">
+              <h3 class="general-title-content__title-wrapper__detail__title">Planner Board Summary</h3><small class="general-title-content__title-wrapper__detail__subtitle">Netguru</small>
+            </div>
+          </div>
+        </div>
+        <div class="container-sidebar__content__data">
+          <h3 class="container-sidebar__content__title">FILTER BY BOARD</h3>
+          <ul class="sidebar-menu__board">
+            <li class="sidebar-menu__board__item"><a class="sidebar-menu__board__link">
+                <div class="square0"><span class="icon-check"></span></div>
+                <h4>Planner Board</h4></a></li>
+            <li class="sidebar-menu__board__item"><a class="sidebar-menu__board__link">
+                <div class="square1"><span class="icon-check"></span></div>
+                <h4>Summary Board</h4></a></li>
+            <li class="sidebar-menu__board__item"><a class="sidebar-menu__board__link">
+                <div class="square2"><span class="icon-check"></span></div>
+                <h4>Project Board</h4></a></li>
+            <li class="sidebar-menu__board__item"><a class="sidebar-menu__board__link">
+                <div class="square3"><span class="icon-check"></span></div>
+                <h4>Internal Board</h4></a></li>
+          </ul>
+        </div>
+        <div class="container-sidebar__content__data">
+          <h3 class="container-sidebar__content__title">FILTER BY MEMBER</h3>
+          <ul class="sidebar-menu__members">
+            <li class="sidebar-menu__members__item"><a class="sidebar-menu__members__link">
+                <div class="square0"><span>S</span><img src="images/persona.jpg"/></div>
+                <h4>Anna Klawikowska</h4></a></li>
+            <li class="sidebar-menu__members__item"><a class="sidebar-menu__members__link">
+                <div class="square1"><span>S</span><img src="images/persona.jpg"/></div>
+                <h4>Sierglej Soskowiec</h4></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-main">
+      <section class="general-title-content">
+        <div class="general-title-content__title-wrapper">
+          <div class="greatwrapper"><span class="icon-star2"></span></div>
+          <div class="general-title-content__title-wrapper__detail">
+            <h3 class="general-title-content__title-wrapper__detail__title">Planner Board Summary</h3><small class="general-title-content__title-wrapper__detail__subtitle">Netguru</small>
+          </div>
+        </div>
+        <div class="general-title-content__buttons-wrapper">
+          <ul class="menu">
+            <li class="menu__item"><a class="menu__link is-enabled" href="#">Board stats</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">My stats</a></li>
+          </ul>
+        </div><span class="icon-close general-title-content_close"></span>
+      </section>
+      <section class="content-charts">
+        <article class="chart">
+          <h3 class="chart__title">TASKS COMPLETED</h3>
+          <div class="chart__content">
+            <div class="image-wrapper"><img src="images/graphics.png"/></div>
+          </div>
+        </article>
+        <article class="chart middle-chart">
+          <h3 class="chart__title">TASKS COMPLETED</h3>
+          <div class="chart__content">
+            <canvas id="myChart" style="width:100%; height:100%;"></canvas>
+          </div>
+        </article>
+        <article class="chart chart-summary">
+          <h3 class="chart__title">SUMMARY</h3>
+          <div class="chart__content">
+            <div class="square border-red">
+              <h1 class="chart__content__number">24</h1>
+              <h4 class="chart__content__desc">Active Users</h4>
+              <div class="progressive-bar border-red"></div>
+            </div>
+            <div class="square">
+              <h1 class="chart__content__number">36</h1>
+              <h4 class="chart__content__desc">Overdue</h4>
+              <div class="progressive-bar border-red"></div>
+            </div>
+            <div class="square"><img src="images/linear.png"/></div>
+            <div class="square border-red">
+              <h1 class="chart__content__number">68</h1>
+              <h4 class="chart__content__desc">Open boards</h4>
+              <div class="progressive-bar border-red"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="content-charts second-containerchart">
+        <article class="chart chart-medium">
+          <h3 class="chart__title">TASKS COMPLETED</h3>
+          <div class="chart__content">
+            <canvas id="myChart1" style="width:100%; height:100%;"></canvas>
+          </div>
+        </article>
+        <article class="chart chart-medium">
+          <h3 class="chart__title">TASKS COMPLETED</h3>
+          <div class="chart__content">
+            <canvas id="myChart2" style="width:100%; height:100%;"></canvas>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div id="overlay-content"></div>
+    <div class="plus-options"><span class="icon-plus"></span></div>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/_charts.js"></script>
+    <script type="text/javascript" src="js/_menu.js"></script>
+  </body>
+</html>

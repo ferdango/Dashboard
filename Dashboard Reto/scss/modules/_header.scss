@@ -1,0 +1,132 @@
+$height-header: 70px;
+
+.container-header{
+  width: 100%;
+  height: em($height-header);
+  background-color: color(blanco);
+  display: flex;
+  padding: 10px $gutter/2;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.24), 0 0 4px 0 rgba(0,0,0,.12);
+  color: color(gris-claro);
+
+  @media only screen and (min-width: 640px){
+    padding: 10px $gutter;
+  }
+
+  //Sticky menu
+  position:fixed;;
+  top:0;
+  z-index: z-number(master);
+  font-weight: $normal-weight;
+
+  & span[class^='icon-']{
+    font-size: em(18px);
+    cursor: pointer;
+    color: #e9e9e9;
+
+  }
+
+  &__sectionTitle{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & .searchin-wrapper{
+      display: none;
+      margin: 0 $gutter*2.5;
+      height: 100%;
+      position: relative;
+      align-items: center;
+
+      @media only screen and (min-width: 640px){
+        display: flex;
+      }
+
+      & .search-input{
+        border: 0;
+        width: 100%;
+        outline: none;
+        padding: 0 30px;
+      }
+
+      & span{
+        position: absolute;
+        color: #e9e9e9;
+      }
+    }
+
+    & .title-wrapper{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-weight: $bold-weight;
+
+      & .title{
+        padding-left: $gutter;
+        font-size: $gutter;
+      }
+    }
+  }
+
+  &__sectionUser{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & .user-detail{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__image{
+        display: block;
+        width: 25px;
+        margin-right: 1em;
+
+        @media only screen and (max-width: 400px){
+          display: none;
+        }
+      }
+
+      &__name{
+        display: none;
+        color: color(gris-claro);
+        font-weight: $bold-weight;
+        font-size: em($gutter);
+        padding: $gutter/2;
+        font-size: $gutter;
+
+        @media only screen and (min-width: 640px){
+          display: block;
+        }
+      }
+
+      &__notification{
+        padding: $gutter;
+        position: relative;
+
+        &::after{
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          border: 1px solid color(azul-base);;
+          position: absolute;
+        }
+      }
+    }
+
+    & .icon-menu{
+      padding: $gutter 0 $gutter $gutter;
+      border-left: 1px solid #e9e9e9;
+    }
+  }
+}
+
+body{
+  margin-top: calc(#{$height-header});
+}

@@ -1,0 +1,166 @@
+.container-sidebar{
+  width: 80%;
+  height: 100%;
+  position: fixed;
+  top: em($height-header);
+  left: 0;
+  background-color: color(blanco);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12);
+  z-index: z-number(master);
+  transition: all .3s ease-in-out;
+  min-width: 270px;
+  max-width: 300px;
+  transform: translateX(-300px);
+
+  &__top{
+    padding: $gutter*2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__content{
+    padding: 0 $gutter*2 $gutter;
+
+    &__title{
+      font-size: 13px;
+      color: color(gris-claro);
+      font-weight: $medium-weight;
+    }
+
+    &__data{
+      & .sidebar-menu__board,.sidebar-menu__members{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: block;
+
+        &__item{
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          padding: 0;
+        }
+
+        &__link{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          margin: 0;
+          margin-bottom: $gutter/3;
+          padding: $gutter 0;
+          cursor: pointer;
+
+          & h4{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-size: 13px;
+            color: inherit;
+            margin-left: 10px;
+            font-weight: $bold-weight;
+          }
+        }
+      }
+
+
+      & .sidebar-menu__board li{
+        &:nth-child(2n+2){
+          color: #444;
+        }
+
+        &:nth-child(2n+1){
+          color: color(gris-claro);
+        }
+
+        & .square0 {
+          background-color: color(gris-claro);
+          padding: $gutter;
+          @extend %square;
+
+          & span {
+            display: none;
+          }
+        }
+        & .square1{
+          @extend %square;
+          background-color: color(rojo-claro);
+          & span {
+            @extend %span;
+          }
+        }
+
+        & .square2{
+          @extend %square;
+          background-color: color(azul-claro);
+          & span {
+            display: none;
+          }
+        }
+
+        & .square3{
+          @extend %square;
+          background-color: color(success);
+
+          & span {
+            @extend %span;
+          }
+        }
+      }
+
+      & .sidebar-menu__members li{
+        &:nth-child(2n+2){
+          color: color(gris-claro);
+        }
+
+        &:nth-child(2n+1){
+          color: #444;
+        }
+
+        & .square0 {
+          background-color: color(gris-claro);
+          @extend %square;
+
+          & span {
+            display: none;
+          }
+          & img{
+            display: block;
+            border-radius: 5px;
+          }
+        }
+
+        & .square1{
+          @extend %square;
+          background-color: color(rojo-claro);
+          & span {
+            @extend %span;
+          }
+
+          & img{
+            display: none;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+%square{
+  width: 35px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+%span{
+  display: block;
+  color: color(blanco);
+  font-size: 10px;
+}

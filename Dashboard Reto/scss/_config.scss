@@ -1,0 +1,53 @@
+//Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600");
+
+//Google icons
+@import url("https://file.myfontastic.com/gUF85ABbgvD3b2XckxkjFD/icons.css");
+
+//Function converter (px -> em)
+@function em($el,$parent:16px){
+  @return ($el / $parent) * 1em;
+}
+
+//Fonts config
+$main-fontfamily: 'Raleway', sans-serif;;
+$main-fontsize: em(16px);
+$light-weight:300;
+$normal-weight:400;
+$medium-weight:500;
+$bold-weight: 600;
+$gutter: 15px;
+
+
+//Colors map
+$colors:(
+        azul-base:#00B1F3,
+        azul-oscuro:#03151F,
+        azul-medio:#006BAB,
+        azul-claro:#29DAFF,
+        rojo:#FF3532,
+        rojo-claro:#FF4946,
+        gris-oscuro:#19242B,
+        gris-claro:#CDCDCD,
+        success:#00CB30,
+        blanco: #FFFFFF
+);
+
+@function color($color){
+  @return map-get($colors,$color);
+}
+
+//Z-index map
+$z-index:(
+        minitool:30,
+        tooltip: 100,
+        modal: 200,
+        overlay:300,
+        offcanvas:500,
+        master:10000,//for sticky manus in headers
+        over:15000//for swaped menus
+);
+
+@function z-number($val){
+  @return map-get($z-index,$val);
+}

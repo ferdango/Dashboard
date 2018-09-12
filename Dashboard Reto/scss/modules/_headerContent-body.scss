@@ -1,0 +1,127 @@
+.general-title-content{
+  width: 100%;
+  margin-bottom: $gutter*2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  @media only screen and (min-width: 640px){
+    flex-direction: row;
+    height: calc(#{$height-header} - 10px);
+  }
+
+  &__title-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    order: 1;
+    left: 0;
+    position: relative;
+
+    @media only screen and (min-width: 640px){
+      width: auto;
+      position: initial;
+    }
+
+    & .greatwrapper{
+      background-color: #1F70C3;
+      border-radius: 4px;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & span{
+        color: color(blanco);
+      }
+    }
+
+    &__detail{
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      &__title{
+        margin: 0;
+        font-weight: $bold-weight;
+        color: #444;
+        font-size: em(16px);
+        @media only screen and (max-width: 400px){
+          font-size: em(13.5px);
+        }
+      }
+      &__subtitle{
+        margin: 0;
+        color: #cdcdcd;
+      }
+    }
+  }
+
+  &__buttons-wrapper{
+    width: 100%;
+    order: 3;
+
+    @media only screen and (min-width: 640px){
+      width: auto;
+      order: 2;
+    }
+
+    & .menu{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      list-style: none;
+      width: 100%;
+      padding: 0;
+
+      @media only screen and (min-width: 640px){
+        width: auto;
+      }
+
+      &__item{
+        width: 50%;
+        border: 1px solid color(gris-claro);
+        background-color: #f1f1f1;
+
+        @media only screen and (min-width: 640px){
+          width: 120px;
+        }
+
+      }
+
+      &__link{
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: color(gris-claro);
+        /*color: #444; active*/
+        font-size: 15px;
+        font-weight: $bold-weight;
+        width: 100%;
+        padding: 10px 15px;
+      }
+    }
+  }
+
+  &_close{
+    font-size: em(30px);
+    order: 2;
+    right: 0;
+    position: absolute;
+    padding: 5px $gutter 0;
+
+    @media only screen and (min-width: 640px){
+      order: 3;
+      position: initial;
+      padding: 0;
+      padding-top: inherit;
+    }
+  }
+}
